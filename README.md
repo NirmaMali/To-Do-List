@@ -38,8 +38,8 @@ Follow these simple steps to get your To-Do List up and running:
 
 1. **Clone or download** the repository:  
    ```bash
-   git clone https://github.com/yourusername/pink-todo-calendar.git
-   cd pink-todo-calendar
+   git clone https://github.com/NirmaMali/To-Do-List.git
+   cd To-Do-List
 2.Open the index.html file in a modern web browser (Chrome, Firefox, Edge, Safari).
 
 3.Start managing your tasks immediately!
@@ -91,7 +91,7 @@ Follow these simple steps to get your To-Do List up and running:
 
 -  Sync with Google Calendar or other external calendar apps
 
-- Add user authentication and cloud synchronization
+- Add user authentication and cloud synchronisation
 
 - Improve responsiveness for mobile and tablet devices
 
