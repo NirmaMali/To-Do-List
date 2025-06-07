@@ -40,64 +40,62 @@ Follow these simple steps to get your To-Do List up and running:
    ```bash
    git clone https://github.com/yourusername/pink-todo-calendar.git
    cd pink-todo-calendar
-Open the index.html file in a modern web browser (Chrome, Firefox, Edge, Safari).
+2.Open the index.html file in a modern web browser (Chrome, Firefox, Edge, Safari).
 
-Start managing your tasks immediately!
+3.Start managing your tasks immediately!
 
-How To Use
-Add Tasks: Enter a task in the input box and press Enter or click the add button.
+## How To Use
+- Add Tasks: Enter a task in the input box and press Enter or click the add button.
 
-Edit Tasks: Click the task text to edit inline, press Enter to save or Escape to cancel.
+- Edit Tasks: Click the task text to edit inline, press Enter to save or Escape to cancel.
 
-Set Deadlines: Click the calendar icon on a task to select a due date.
+- Set Deadlines: Click the calendar icon on a task to select a due date.
 
-Add Subtasks: Click "+ Add Subtask" under a task, type the subtask, then press Enter.
+- Add Subtasks: Click "+ Add Subtask" under a task, type the subtask, then press Enter.
 
-Complete Tasks: Use checkboxes next to tasks and subtasks to mark them as done.
+-  Complete Tasks: Use checkboxes next to tasks and subtasks to mark them as done.
 
-Delete Tasks/Subtasks: Use the trash icon or × button respectively.
+-   Delete Tasks/Subtasks: Use the trash icon or × button respectively.
 
-Reorder Tasks: Drag and drop tasks to rearrange them.
+-  Reorder Tasks: Drag and drop tasks to rearrange them.
 
-Filter Tasks: Use the dropdown menu to show All, Done, or Pending tasks.
+-  Filter Tasks: Use the dropdown menu to show All, Done, or Pending tasks.
 
-View Calendar: Navigate months using arrows; tasks appear on their due dates.
+-  View Calendar: Navigate months using arrows; tasks appear on their due dates.
 
-Toggle Theme: Click the sun/moon icon to switch between light and dark modes.
+-  Toggle Theme: Click the sun/moon icon to switch between light and dark modes.
 
-Clear All: Click the “Clear All” button to remove all tasks and start fresh.
+-  Clear All: Click the “Clear All” button to remove all tasks and start fresh.
 
-Reminders: Receive pop-up alerts for overdue tasks.
+-  Reminders: Receive pop-up alerts for overdue tasks.
 
-Built With
-JavaScript (ES6+) — Interactive app logic and features
+## Built With
+   - JavaScript (ES6+) — Interactive app logic and features
 
-HTML5 — Semantic and accessible markup
+   - HTML5 — Semantic and accessible markup
 
-CSS3 — Modern styles with Flexbox and Grid for layout
+   - CSS3 — Modern styles with Flexbox and Grid for layout
 
-LocalStorage — Persistent task storage in your browser
+   - LocalStorage — Persistent task storage in your browser
 
-Project Structure
-graphql
-Copy
-Edit
-/ (root folder)
-├── index.html       # Main HTML page
-├── style.css        # CSS for styling and theming
-└── script.js        # JavaScript functionality and logic
-Future Enhancements
-Add notification sounds for reminders
+## Project Structure
 
-Export and import tasks via JSON or CSV
+    / (root folder)
+        ├── index.html       # Main HTML page
+        ├── style.css        # CSS for styling and theming
+        └── script.js        # JavaScript functionality and logic
+## Future Enhancements
+- Add notification sounds for reminders
 
-Sync with Google Calendar or other external calendar apps
+-  Export and import tasks via JSON or CSV
 
-Add user authentication and cloud synchronization
+-  Sync with Google Calendar or other external calendar apps
 
-Improve responsiveness for mobile and tablet devices
+- Add user authentication and cloud synchronization
 
-Contact
+- Improve responsiveness for mobile and tablet devices
+
+## Contact
 Created with ❤️ by NirmaMali 
 Questions? Suggestions? Feel free to reach out:
 ✉️ nirmamali8618@gmail.com
