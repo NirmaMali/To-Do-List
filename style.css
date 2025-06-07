@@ -1,0 +1,462 @@
+/* Reset & base */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: #fff0f5; /* lavender blush - very light pink */
+  color: #4a2c36; /* dark muted maroon */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  background: #fff;
+  max-width: 600px;
+  width: 100%;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 18px rgba(199, 141, 155, 0.3);
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #b35b6b; /* dusty rose */
+}
+
+/* Input & buttons */
+input[type="text"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #f7c6cc;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #4a2c36;
+  transition: border-color 0.3s ease;
+  background: #fff0f5;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+  outline: none;
+  border-color: #d46a7e;
+  background: #ffe8f0;
+}
+
+button {
+  background: #d46a7e;
+  color: #fff;
+  border: none;
+  padding: 11px 18px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background: #b35b6b;
+}
+
+button:disabled {
+  background: #f7c6cc;
+  cursor: default;
+}
+
+/* Task input area */
+#input-area {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+#todo-input {
+  flex: 2;
+}
+#deadline-input, #tag-input {
+  flex: 1;
+  min-width: 140px;
+}
+
+#add-btn {
+  flex: 0 0 auto;
+  align-self: center;
+  padding: 12px 25px;
+}
+
+/* Filter and actions bar */
+#filter {
+  padding: 7px 10px;
+  border: 2px solid #f7c6cc;
+  border-radius: 6px;
+  background: #fff0f5;
+  margin-right: 15px;
+  color: #4a2c36;
+}
+
+#clear-all {
+  background: #e48a9b;
+  margin-left: auto;
+  padding: 8px 15px;
+}
+
+#clear-all:hover {
+  background: #c65a6a;
+}
+
+/* Task count and theme toggle */
+#task-count {
+  font-weight: 600;
+  color: #9c5a67;
+  margin-left: 10px;
+}
+
+#theme-toggle {
+  background: transparent;
+  font-size: 1.4rem;
+  color: #b35b6b;
+  border: none;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+/* ToDo List */
+#todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  background: #fff0f5;
+  border: 2px solid #f7c6cc;
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(215, 158, 173, 0.15);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.todo-item.dragging {
+  opacity: 0.6;
+  box-shadow: 0 0 15px #d46a7e;
+  transform: scale(1.02);
+}
+
+.todo-item.done {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.todo-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.todo-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.todo-text {
+  flex: 1;
+  font-weight: 600;
+  color: #6b3946;
+  cursor: pointer;
+}
+
+.todo-text.editing {
+  border: 1.5px solid #d46a7e;
+  padding: 5px;
+  border-radius: 6px;
+  background: #ffe8f0;
+  color: #822c3b;
+}
+
+.todo-deadline {
+  font-size: 0.85rem;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  user-select: none;
+}
+
+.deadline-pending {
+  background: #f9d5db;
+  color: #a84b5e;
+}
+
+.deadline-overdue {
+  background: #e96a73;
+  color: #fff;
+  font-weight: 700;
+}
+
+.deadline-future {
+  background: #f6cbd0;
+  color: #802732;
+}
+
+.todo-tag {
+  background: #f5b1bc;
+  color: #6b3946;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 14px;
+  user-select: none;
+}
+
+/* Actions */
+.todo-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.todo-actions button {
+  background: transparent;
+  color: #b35b6b;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0 6px;
+  line-height: 1;
+}
+
+.todo-actions button:hover {
+  color: #822c3b;
+}
+
+/* Subtasks */
+.subtasks {
+  list-style: none;
+  padding-left: 25px;
+  margin: 0;
+  border-left: 2px solid #f7c6cc;
+}
+
+.subtask-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  color: #8b4e5a;
+}
+
+.subtask-item .subtask-text {
+  flex: 1;
+  cursor: pointer;
+}
+
+.subtask-item .subtask-text.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.subtask-input {
+  padding: 5px;
+  border-radius: 6px;
+  border: 1.5px solid #d46a7e;
+  background: #ffe8f0;
+  color: #822c3b;
+  width: 100%;
+}
+
+.subtask-delete-btn {
+  background: transparent;
+  border: none;
+  color: #b35b6b;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0 6px;
+}
+
+.subtask-delete-btn:hover {
+  color: #822c3b;
+}
+
+/* Add Subtask */
+.add-subtask {
+  font-size: 0.9rem;
+  color: #b35b6b;
+  cursor: pointer;
+  user-select: none;
+  margin-left: 28px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.add-subtask:hover {
+  color: #822c3b;
+}
+
+/* Filter and Clear All container */
+#filter,
+#clear-all,
+#theme-toggle {
+  user-select: none;
+}
+
+/* Calendar */
+#calendar-view {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 650px;
+  background: #fff0f5;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 18px rgba(199, 141, 155, 0.3);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #b35b6b;
+}
+
+.calendar-header button {
+  background: #d46a7e;
+  padding: 7px 15px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.calendar-header button:hover {
+  background: #b35b6b;
+}
+
+.calendar-month {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.calendar-day {
+  background: #ffe6ec;
+  border-radius: 12px;
+  padding: 10px 6px;
+  min-height: 80px;
+  box-shadow: 0 2px 6px rgba(215, 158, 173, 0.3);
+  color: #822c3b;
+  font-weight: 600;
+  position: relative;
+}
+
+.calendar-task-list {
+  margin-top: 8px;
+  font-weight: 500;
+  font-size: 0.75rem;
+  max-height: 55px;
+  overflow-y: auto;
+  color: #a84b5e;
+}
+
+.calendar-task-list div {
+  margin-bottom: 3px;
+  cursor: default;
+}
+
+/* Scrollbar for calendar tasks */
+.calendar-task-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.calendar-task-list::-webkit-scrollbar-thumb {
+  background-color: #d46a7e;
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .container {
+    padding: 20px;
+  }
+
+  #input-area {
+    flex-direction: column;
+  }
+
+  #todo-input, #deadline-input, #tag-input, #add-btn {
+    flex: unset;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Reminder popup */
+.reminder-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #d46a7e;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #b35b6b;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 1000;
+  animation: slidein 0.4s ease forwards;
+}
+
+.reminder-popup button {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.reminder-popup button:hover {
+  background: white;
+  color: #d46a7e;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

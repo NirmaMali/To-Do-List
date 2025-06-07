@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pink Themed To-Do List with Calendar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>My To-Do List</h1>
+
+    <div id="input-area">
+      <input type="text" id="todo-input" placeholder="Enter a new task" />
+      <input type="date" id="deadline-input" />
+      <input type="text" id="tag-input" placeholder="Category/Tag" />
+      <button id="add-btn" disabled>Add Task</button>
+    </div>
+
+    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+      <select id="filter" title="Filter Tasks">
+        <option value="all" selected>All Tasks</option>
+        <option value="pending">Pending</option>
+        <option value="done">Done</option>
+      </select>
+
+      <button id="clear-all" title="Clear All Tasks">Clear All</button>
+
+      <button id="theme-toggle" title="Toggle Theme">🌙</button>
+
+      <span id="task-count"></span>
+    </div>
+
+    <ul id="todo-list"></ul>
+
+    <h2 style="margin-top: 40px; color: #b35b6b;">Calendar View</h2>
+    <div id="calendar-view">
+      <div class="calendar-header">
+        <button id="prev-month">&lt;</button>
+        <div class="calendar-month" id="calendar-month"></div>
+        <button id="next-month">&gt;</button>
+      </div>
+      <div class="calendar-grid" id="calendar-grid">
+        <!-- Days & tasks will be generated here -->
+      </div>
+    </div>
+  </div>
+
+  <div id="reminder-popup" class="reminder-popup hidden">
+    <p id="reminder-message"></p>
+    <button id="reminder-close">Dismiss</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
